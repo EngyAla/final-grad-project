@@ -1,0 +1,123 @@
+// =================== Accordion Styles ===================
+.accordion {
+    max-width: 800px;
+    margin: 0 auto;
+    .accordion-item {
+        border: 1px solid var(--border-gray-color);
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .accordion-header {
+            margin: 0;
+
+            .accordion-button {
+                width: 100%;
+                padding: 1.25rem 1.5rem;
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: var(--black-color, #1e1e1e);
+                background-color: var(--accordion-body-bg);
+                border: none;
+                text-align: left;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                position: relative;
+
+                &::after {
+                    background-image: none;
+                }
+
+                // Remove default Bootstrap arrow
+                &::before {
+                    display: none !important;
+                }
+
+                &:not(.collapsed) {
+                    background-color: var(--accordion-body-bg);
+                    box-shadow: none;
+                    border-bottom: 2px solid var(--border-gray-color);
+                }
+
+                &::after {
+                    content: "+";
+                    position: absolute;
+                    right: 1.5rem;
+                    top: 51%;
+                    transform: translateY(-50%);
+                    font-size: 1.5rem;
+                    font-weight: 300;
+                    transition: transform 0.3s ease;
+                    width: 30px;
+                    height: 30px;
+                    background-color: var(--blue-color);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    color: var(--white-color);
+                }
+
+                &:not(.collapsed)::after {
+                    content: "−";
+                    transform: translateY(-50%) rotate(0deg);
+                }
+            }
+        }
+
+        .accordion-collapse {
+            transition: height 0.3s ease;
+
+            &.show {
+                height: auto;
+            }
+
+            .accordion-body {
+                padding: 1.5rem;
+                background-color: var(--accordion-body-bg);
+                color: var(--accordion-body-color);
+                line-height: 1.6;
+                font-size: 1rem;
+                font-weight: 500;
+
+                code {
+                    background-color: var(--light-gray-bg, #f8f9fa);
+                    padding: 0.25rem 0.5rem;
+                    border-radius: 4px;
+                    font-size: 0.9rem;
+                    color: var(--blue-color, #2653d0);
+                }
+            }
+        }
+    }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+    .accordion {
+        .accordion-item {
+            .accordion-header {
+                .accordion-button {
+                    padding: 1rem 1.25rem;
+                    font-size: 1rem;
+
+                    &::after {
+                        right: 1.25rem;
+                        font-size: 1.25rem;
+                    }
+                }
+            }
+
+            .accordion-collapse {
+                .accordion-body {
+                    padding: 1.25rem;
+                    font-size: 0.95rem;
+                }
+            }
+        }
+    }
+}

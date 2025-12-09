@@ -1,0 +1,183 @@
+/* ============= Privacy Policy Page Styles ============= */
+
+.Privacy-Policy-Page {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+
+    .privacy-content {
+        section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+
+            h2 {
+                border-bottom: 3px solid var(--primary-color);
+                padding-bottom: 0.5rem;
+                margin-bottom: 1.5rem;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -3px;
+                    left: 0;
+                    width: 50px;
+                    height: 3px;
+                    background: var(--secondary-color);
+                }
+            }
+
+            .card {
+                transition: all 0.3s ease;
+                border: 1px solid rgba(0, 0, 0, 0.05) !important;
+            }
+
+            .alert {
+                border-radius: 8px;
+                border-left: 4px solid var(--info-color) !important;
+            }
+        }
+
+        // Custom list styling
+        .list-unstyled {
+            li {
+                padding: 0.5rem 0;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                transition: all 0.3s ease;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                &:hover {
+                    background: rgba(0, 123, 255, 0.05);
+                    padding-left: 0.5rem;
+                    border-radius: 6px;
+                }
+
+                i {
+                    transition: all 0.3s ease;
+                }
+
+                &:hover i {
+                    transform: scale(1.2);
+                }
+            }
+        }
+
+        // Icon circles
+        .bg-primary,
+        .bg-success,
+        .bg-warning {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+            &:hover {
+                transform: scale(1.1);
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        // Contact section styling
+        .d-flex.align-items-center,
+        .d-flex.align-items-start {
+            padding: 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background: rgba(0, 123, 255, 0.05);
+                transform: translateX(5px);
+            }
+
+            i {
+                transition: all 0.3s ease;
+            }
+
+            &:hover i {
+                transform: scale(1.2);
+                color: var(--primary-color) !important;
+            }
+        }
+
+        // Cookie section cards
+        .border.rounded {
+            transition: all 0.3s ease;
+            border: 2px solid transparent !important;
+
+            &:hover {
+                border-color: var(--primary-color) !important;
+                transform: translateY(-5px);
+                box-shadow: 0 8px 25px rgba(0, 123, 255, 0.15);
+            }
+
+            i {
+                transition: all 0.3s ease;
+            }
+
+            &:hover i {
+                transform: scale(1.2);
+                color: var(--primary-color) !important;
+            }
+        }
+    }
+
+    // Responsive adjustments
+    @media (max-width: 768px) {
+        .privacy-content {
+            section {
+                padding: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .row .col-md-6,
+            .row .col-md-4 {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    @media (max-width: 576px) {
+        .privacy-content {
+            section {
+                padding: 1rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+/* ============= Animation Keyframes ============= */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.privacy-content section {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* ============= Print Styles ============= */
+@media print {
+    .Privacy-Policy-Page {
+        background: white !important;
+
+        .privacy-content section {
+            box-shadow: none !important;
+            border: 1px solid #ddd !important;
+            break-inside: avoid;
+        }
+    }
+}

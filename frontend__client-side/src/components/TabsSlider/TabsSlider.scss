@@ -1,0 +1,137 @@
+// =================== Tabs Slider ===================
+.TabsSlider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 54px;
+    display: flex;
+    align-items: center;
+
+    // Slider Container
+    .TabsSlider-slider {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        // Scroll Buttons
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid #e0e0e0;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+            &:hover:not(.disabled) {
+                background: white;
+                border-color: var(--blue-color);
+            }
+
+            &.disabled {
+                opacity: 0.3;
+                cursor: not-allowed;
+            }
+
+            &.scroll-left {
+                left: 0;
+            }
+
+            &.scroll-right {
+                right: 0;
+            }
+
+            i {
+                font-size: 14px;
+                color: var(--blue-color);
+            }
+        }
+
+        // Tabs Container
+        .TabsSlider-tabs {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 0 50px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            .TabsSlider-btn {
+                flex-shrink: 0;
+                white-space: nowrap;
+                padding: 0.5rem 1rem;
+                border-radius: 20px;
+                font-weight: 600;
+                font-size: 0.9rem;
+                transition: all 0.3s ease;
+                border: 2px solid var(--blue-light-color);
+                background: white;
+                color: var(--blue-color);
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+
+                &:hover {
+                    background: var(--blue-color);
+                    color: white;
+                    border-color: var(--blue-color);
+                }
+
+                &.active {
+                    background: var(--blue-color);
+                    color: white;
+                    border-color: var(--blue-color);
+                }
+
+                i {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+
+    // Responsive Styles
+    @media (max-width: 576px) {
+        height: 48px;
+
+        .TabsSlider-slider {
+            // Scroll Buttons
+            .scroll-btn {
+                width: 35px;
+                height: 35px;
+
+                i {
+                    font-size: 12px;
+                }
+            }
+
+            // Tabs Container
+            .TabsSlider-tabs {
+                padding: 0 40px;
+
+                .TabsSlider-btn {
+                    font-size: 0.8rem;
+                    padding: 0.4rem 0.8rem;
+
+                    i {
+                        font-size: 0.7rem;
+                    }
+                }
+            }
+        }
+    }
+}

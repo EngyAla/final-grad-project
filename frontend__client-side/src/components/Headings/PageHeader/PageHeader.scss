@@ -1,0 +1,37 @@
+.Page-Header {
+    .text-center {
+        .display-4 {
+            width: fit-content;
+            margin: 0 auto;
+            background: linear-gradient(
+                135deg,
+                var(--main-blue-color) 10%,
+                var(--blue-light-color) 20%,
+                var(--main-blue-color) 30%,
+                var(--blue-light-color) 50%,
+                var(--main-blue-color) 60%,
+                var(--blue-light-color) 80%,
+                var(--main-blue-color) 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .lead {
+            font-weight: 500;
+            color: var(--dark-gray-color) !important;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .Page-Header {
+        .text-center {
+            .display-4 {
+                font-size: 2.5rem;
+            }
+        }
+    }
+}

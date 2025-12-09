@@ -1,0 +1,406 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+// =================== Variables ===================
+:root {
+    --body-bg: #fff;
+    --body-color: #000;
+
+    // Blue Colors
+    --main-blue-color: #007bff;
+    --blue-color: #2653d0;
+    --blue-dark-color: #2653d0;
+    // --blue-light-color: rgba(73, 136, 252, 0.53);
+    --blue-light-color: #5388eb;
+    --blue-light2-color: #5388eb;
+
+    --white-color: #ffffff;
+
+    --black-color: #1e1e1e;
+    --black-light-color: #0000007e;
+
+    --orange-color: #fcb52f;
+    --yellow-color: #ebe953;
+    --pink-color: #e86281;
+    --green-color: #58acc3;
+    --green-light-color: #bfebf8;
+
+    --gray-color: #efefef;
+    --gray-dark-color: #d9d9d9b2;
+
+    --border-gray-color: #98989861;
+
+    // Pagination Colors
+    --pagination-border-color: #8b8b8b;
+
+    --time-line-color: #404040;
+
+    // Accordion Colors
+    --accordion-body-bg: #4987fc30;
+    --accordion-body-color: #1b1c1dcb;
+
+    // FAQ Colors
+    --faq-body-bg: #f6f9fe;
+}
+
+// =================== Global Styles ===================
+body {
+    font-family: "Inter", sans-serif;
+    background-color: var(--body-bg);
+    color: var(--body-color);
+    overflow-x: hidden;
+}
+@media (max-width: 576px) {
+    .container {
+        padding-inline: 2rem;
+    }
+}
+
+// =================== Reusable Classes ===================
+// Pages
+.main-page {
+    min-height: 100vh;
+    margin-top: 60px;
+}
+.main-section {
+    padding-block: 60px;
+}
+
+// Colors
+.main-blue-color {
+    color: var(--main-blue-color);
+}
+.blue-color {
+    color: var(--blue-color);
+}
+.white-color {
+    color: var(--white-color);
+}
+.gray-color {
+    color: var(--gray-color);
+}
+.yellow-color {
+    color: var(--yellow-color);
+}
+.orange-color {
+    color: var(--orange-color);
+}
+.black-color {
+    color: var(--black-color);
+}
+.black-light-color {
+    color: var(--black-light-color);
+}
+
+.gray-dark-color {
+    color: var(--gray-dark-color);
+}
+
+// Backgrounds
+.blue-bg {
+    background-color: var(--blue-color);
+}
+.blue-light-bg {
+    background-color: var(--blue-light-color);
+}
+.blue-light2-bg {
+    background-color: var(--blue-light2-color);
+}
+
+.white-bg {
+    background-color: var(--white-color);
+}
+.black-bg {
+    background-color: var(--black-color);
+}
+.black-light-bg {
+    background-color: var(--black-light-color);
+}
+.yellow-bg {
+    background-color: var(--yellow-color);
+}
+.pink-bg {
+    background-color: var(--pink-color);
+}
+
+.green-bg {
+    background-color: var(--green-color);
+}
+.green-light-bg {
+    background-color: var(--green-light-color);
+}
+
+.faq-body-bg {
+    background-color: var(--faq-body-bg);
+}
+
+// Buttons
+.blue-btn {
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    border: 1px solid var(--blue-color);
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    &:hover {
+        background-color: var(--blue-light-color);
+        border-color: var(--blue-light-color);
+    }
+}
+.blue-btn-outline {
+    background-color: transparent;
+    color: var(--blue-color);
+    border: 1px solid var(--blue-color);
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    &:hover {
+        background-color: var(--blue-light-color);
+        color: var(--white-color);
+        border-color: var(--blue-light-color);
+    }
+}
+.language-btn {
+    background-color: transparent;
+    color: var(--black-color);
+    border: 1.5px solid var(--black-color);
+    border-radius: 50px;
+    padding: 8px 20px;
+    padding-left: 15px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    &:hover {
+        background-color: var(--black-color);
+        color: #fff;
+    }
+}
+.user-btn {
+    background-color: var(--blue-color);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    &:hover {
+        background-color: var(--blue-light-color);
+    }
+}
+.transparent-blue-btn {
+    background-color: transparent;
+    color: var(--blue-color);
+    border: 2px solid #e2e8f0;
+    border-radius: 4px;
+    @media (min-width: 992px) {
+        border-bottom: none;
+        border-radius: 4px 4px 0 0;
+    }
+    padding: 10px 20px 10px 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    &:hover {
+        background-color: var(--blue-color);
+        color: var(--white-color);
+        border-color: var(--blue-color);
+    }
+}
+.white-blue-btn {
+    background-color: var(--white-color);
+    color: var(--blue-color);
+    border: 2px solid var(--white-color);
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    &:hover {
+        background-color: var(--blue-color);
+        color: var(--white-color);
+        border-color: var(--blue-color);
+    }
+}
+
+// Text
+.font-small {
+    font-size: 0.9rem;
+    @media (min-width: 1200px) {
+        font-size: 1rem;
+    }
+}
+.font-extra-small {
+    font-size: 0.8rem;
+    @media (min-width: 768px) {
+        font-size: 0.9rem;
+    }
+}
+
+// Borders
+.gray-border {
+    border: 2px solid var(--border-gray-color);
+}
+
+// Cursor
+.cursor-pointer {
+    cursor: pointer;
+}
+
+// Box Shadows
+.gray-box-shadow {
+    box-shadow: 0px 4px 2px 0 #98989842;
+}
+
+// Transitions
+.trans-3 {
+    transition: all 0.3s ease;
+}
+.rotate-180 {
+    rotate: 180deg;
+}
+
+// Links
+.animated-hover-link {
+    text-decoration: underline;
+    transition: all 0.5s ease;
+    &:hover {
+        background-color: var(--white-color);
+        color: var(--blue-color);
+        rotate: 360deg;
+    }
+}
+
+// Dimensions
+.w-fit {
+    width: fit-content;
+}
+
+// ===================== Font Awesome config =========================
+// Font Awesome Icons Fix
+.fa,
+.fas,
+.far,
+.fab,
+.fal,
+.fad,
+.fa-solid,
+.fa-regular,
+.fa-brands,
+.fa-light,
+.fa-duotone {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro",
+        "Font Awesome 6 Brands", "FontAwesome" !important;
+    font-weight: 900 !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    text-rendering: auto !important;
+    line-height: 1 !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    display: inline-block !important;
+}
+
+.fa-regular {
+    font-weight: 400 !important;
+}
+
+.fa-brands {
+    font-family: "Font Awesome 6 Brands", "FontAwesome" !important;
+    font-weight: 400 !important;
+}
+
+// Ensure icons are not hidden or overridden
+i[class*="fa-"] {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro",
+        "Font Awesome 6 Brands", "FontAwesome" !important;
+    font-weight: 900 !important;
+    font-style: normal !important;
+    display: inline-block !important;
+    text-decoration: none !important;
+    text-rendering: auto !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+}
+
+// Additional Font Awesome fixes
+.fa-solid {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+}
+
+.fa-regular {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 400 !important;
+}
+
+.fa-brands {
+    font-family: "Font Awesome 6 Brands" !important;
+    font-weight: 400 !important;
+}
+
+// Force Font Awesome to load
+@font-face {
+    font-family: "Font Awesome 6 Free";
+    font-style: normal;
+    font-weight: 900;
+    font-display: block;
+    src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2")
+            format("woff2"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff")
+            format("woff"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.ttf")
+            format("truetype");
+}
+
+@font-face {
+    font-family: "Font Awesome 6 Free";
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-regular-400.woff2")
+            format("woff2"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-regular-400.woff")
+            format("woff"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-regular-400.ttf")
+            format("truetype");
+}
+
+@font-face {
+    font-family: "Font Awesome 6 Brands";
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-brands-400.woff2")
+            format("woff2"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-brands-400.woff")
+            format("woff"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-brands-400.ttf")
+            format("truetype");
+}

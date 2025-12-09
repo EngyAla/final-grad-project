@@ -1,0 +1,14 @@
+.Section-Heading {
+    h2 {
+        font-size: 2rem;
+        @media (min-width: 992px) {
+            font-size: 2.8rem;
+        }
+        @media (min-width: 1200px) {
+            font-size: 3rem;
+        }
+        @media (min-width: 1400px) {
+            font-size: 3.2rem;
+        }
+    }
+}

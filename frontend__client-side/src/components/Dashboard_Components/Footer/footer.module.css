@@ -1,0 +1,34 @@
+.footer{
+    background-color: var(--Main_Color) ;
+    color: var(--MainLight_text);
+    margin-inline: 10px;
+    padding: 15px;
+}
+
+
+.bottom_footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 5px 25px;
+}
+.icon_container {
+    background-color: #ffffff1d;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.social_icons{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.social_icons a{
+    text-decoration: none;
+    color: var(--MainLight_text);
+}

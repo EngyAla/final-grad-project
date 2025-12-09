@@ -1,0 +1,93 @@
+.doctor_directory{
+    margin: 25px;
+}
+
+.filter_doctor{
+    padding: 15px 15px 25px !important;
+    margin-bottom: 35px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter_doctor h4{
+    margin-bottom: 25px;
+}
+
+.select_content{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 16px;
+}
+.select_container_text input{
+    color: #2653D0;
+    font-weight: 600;
+    border: 1px solid #2653D0;
+    border-radius: 7px;
+    padding: 9px 10px;
+    outline: none;
+    transition: 0.2s ease-in-out;
+    width: 100%;
+}
+.select_container_text input:focus{
+    border-color: #1e5eff;
+    box-shadow: 0 0 0 2px rgba(22, 80, 227, 0.2);
+}
+.select_container_text input::placeholder{
+    color: #2653D0;
+    font-weight: 500;
+}
+
+.card_header{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.card_header h6{
+    font-weight: 600;
+}
+.card_header p{
+    color: var(--Grey);
+}
+
+.doctor_details .detail{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.doctor_details .detail p{
+    margin-top: 15px;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: var(--MainDark_text);
+}
+
+
+.card_footer{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.card_footer div a:nth-child(2){
+    margin-inline: 10px;
+}
+
+/* ///////// */
+
+.not_found_res{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.not_found_res h1{
+    margin-top: 50px;
+    color: var(--MainDark_text);
+}

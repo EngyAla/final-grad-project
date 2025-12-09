@@ -1,0 +1,163 @@
+.timeline {
+    .timeline-container {
+        position: relative;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 2rem 0;
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--time-line-color, #404040);
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .guidance-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+
+            .step-item {
+                display: flex;
+                align-items: flex-start;
+                position: relative;
+                z-index: 2;
+
+                .step-number {
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 50px;
+                    height: 50px;
+                    background-color: var(--blue-color, #2653d0);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 3;
+                    box-shadow: 0 0 0 6px var(--white-color, #ffffff);
+
+                    span {
+                        color: var(--white-color, #ffffff);
+                        font-size: 1.25rem;
+                        font-weight: 600;
+                    }
+                }
+
+                .step-content {
+                    width: 45%;
+                    padding-left: 2rem;
+
+                    .step-title {
+                        color: var(--black-color, #1e1e1e);
+                        font-size: 1.25rem;
+                        font-weight: 700;
+                        margin: 0 0 0.75rem 0;
+                        line-height: 1.3;
+                    }
+
+                    .step-description {
+                        color: var(--black-light-color, #0000007e);
+                        font-size: 1rem;
+                        font-weight: 400;
+                        margin: 0;
+                        line-height: 1.5;
+                    }
+                }
+
+                // Alternating layout for large screens
+                &:nth-child(odd) {
+                    .step-content {
+                        margin-left: auto;
+                        margin-right: 0;
+                        padding-left: 2rem;
+                        padding-right: 0;
+                    }
+                }
+
+                &:nth-child(even) {
+                    .step-content {
+                        margin-left: 0;
+                        margin-right: auto;
+                        padding-left: 0;
+                        padding-right: 2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    // Small screens - single direction layout
+    @media (max-width: 991.98px) {
+        .timeline-container {
+            .timeline-line {
+                display: none;
+            }
+
+            .guidance-steps {
+                gap: 2rem;
+
+                .step-item {
+                    flex-direction: row;
+                    align-items: flex-start;
+
+                    .step-number {
+                        position: static;
+                        transform: none;
+                        margin-right: 1rem;
+                        flex-shrink: 0;
+                    }
+
+                    .step-content {
+                        width: 100%;
+                        margin-left: 0;
+                        margin-right: 0;
+                        padding-left: 0;
+                        padding-right: 0;
+                        flex: 1;
+
+                        .step-title {
+                            font-size: 1.125rem;
+                        }
+
+                        .step-description {
+                            font-size: 0.95rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Extra small screens
+    @media (max-width: 576px) {
+        .timeline-container {
+            .guidance-steps {
+                .step-item {
+                    .step-number {
+                        width: 40px;
+                        height: 40px;
+
+                        span {
+                            font-size: 1rem;
+                        }
+                    }
+
+                    .step-content {
+                        .step-title {
+                            font-size: 1rem;
+                        }
+
+                        .step-description {
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

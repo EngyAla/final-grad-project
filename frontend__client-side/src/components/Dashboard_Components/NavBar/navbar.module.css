@@ -1,0 +1,23 @@
+.navbar{
+    background-color: unset !important;
+    box-shadow: none !important;
+    color: black !important;
+}
+
+.toggle_btn{
+    margin-right: 25px;
+}
+.toggle_icon{
+    font-size: 30px !important;
+    color: var(--SecondaryDark_text) !important;
+}
+
+.patient_name{
+    color: var(--MainDark_text);
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.search_box{
+    border: 1px solid #b8b8b8;
+}

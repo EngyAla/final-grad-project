@@ -1,0 +1,113 @@
+.personal_info,
+.timing_info{
+    padding: 15px 20px;
+}
+
+.name_info h4{
+    color: var(--MainDark_text);
+}
+.name_info p{
+    color: var(--SecondaryDark_text);
+}
+
+.address_info{
+    padding: 10px 20px;
+    background-color: var(--MidLightBlue_bg) !important;
+    color: var(--Main_Color) !important;
+    margin-top: 20px;
+}
+
+.address_info h5{
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.address_info p{
+    font-size: 16px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.personal_info img{
+    border-radius: 5px;
+}
+
+.timing_info h4{
+    display: flex;
+    align-items: center;
+}
+.timing_info_cards_container{
+    margin-top: 30px;
+}
+
+.timing_info_card{
+    border: 1px solid var(--Main_Color);
+    border-radius: 5px;
+    padding: 10px 75px 1px 15px;
+}
+
+.timing_info_card h5{
+    color: var(--Main_Color);
+}
+.timing_info_card p{
+    color: var(--SecondaryDark_text);
+}
+
+/* //////////// */
+
+.doctor_detailes_Contact_location h5{
+    color: var(--MainDark_text);
+}
+.doctor_detailes_Contact_location p{
+    color: var(--SecondaryDark_text);
+}
+
+/* ///////////////// */
+
+.patient_reviews_card{
+    padding: 15px 20px;
+    border: 1px solid  #ecececc5;
+}
+
+.rating{
+    display: flex;
+    align-items: first baseline;
+    gap: 10px;
+}
+.rating h1{
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 70px;
+}
+
+.rating_presentage{
+    display: flex;
+    justify-content: space-between;
+    padding-inline-end: 25px;
+}
+.progress{
+    height: 20px;
+    background-color: #ecececc5;
+    border-radius: 15px;
+    margin: 5px;
+    text-align: center;
+    overflow: hidden;
+    /* transition: width 100ms ease-in-out; */
+}
+
+.progress .sub_progress{
+    background-color: var(--Stars);
+    height: 100%;
+    border-radius: 15px;
+    transition: all 50ms ease-in-out;
+}
+
+.patient_reviews h5,
+.patient_reviews h6{
+    font-weight: 600;
+    color: var(--MainDark_text);
+}
+.patient_reviews p{
+    color: var(--SecondaryDark_text);
+}

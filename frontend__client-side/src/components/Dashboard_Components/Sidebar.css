@@ -1,0 +1,48 @@
+.sidebar {
+  width: 250px; 
+  background-color: white;
+  flex-shrink: 0; 
+  transition: width 0.3s ease-in-out; 
+}
+
+
+.sidebar.collapsed {
+  width: 80px; 
+  padding: 10px !important;
+}
+
+
+.sidebar.collapsed .nav-link {
+    justify-content: center;
+    padding: 10px !important; 
+}
+
+
+.sidebar.collapsed .nav-link span.me-3 {
+    margin-right: 0 !important;
+}
+
+
+.active-nav-link {
+  background-color: #e6f7ef;
+  color: #2653D0DB!important; 
+  font-weight: 600; 
+  border-left: 4px solid #2653D0DB;
+}
+
+
+.sidebar.collapsed .active-nav-link {
+    border-left: none;
+  
+}
+
+.nav-link {
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.logout-link {
+    font-weight: 600;
+}
+.sidebar.collapsed .logo {
+    justify-content:up !important;
+}

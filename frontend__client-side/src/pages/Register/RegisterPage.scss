@@ -1,0 +1,59 @@
+.Register-Page {
+    .info-progress {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-bottom: 1rem !important;
+    }
+    .info-progress-item {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 1rem !important;
+        width: 100%;
+        padding: 1.3rem 1rem !important;
+        border-bottom: 3px solid var(--border-gray-color);
+        &.active {
+            border-bottom-color: #2653d0;
+            .info-progress-item-icon {
+                color: #ffffff !important;
+                border-color: #2653d0 !important;
+            }
+        }
+        &.completed {
+            border-bottom-color: #2653d0;
+            color: #ffffff !important;
+            border-color: var(--border-gray-color) !important;
+            .info-progress-item-icon {
+                background-color: #2653d0 !important;
+                color: #ffffff !important;
+                border-color: #2653d0 !important;
+                i {
+                    display: block !important;
+                }
+            }
+        }
+
+        .info-progress-item-icon {
+            width: 35px !important;
+            height: 35px !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            border: 3px solid #000;
+
+            i {
+                font-size: 1.1rem !important;
+                display: none !important;
+            }
+        }
+
+        h2 {
+            margin: 0 !important;
+            font-size: 1.1rem !important;
+            font-weight: 600 !important;
+            color: #333 !important; // Debug color
+        }
+    }
+}

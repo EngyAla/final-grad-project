@@ -1,0 +1,81 @@
+.chatLeftSide{
+    height: 80vh;
+    overflow: hidden;
+    border: 1px solid #c9c9c9a6;
+    border-radius: 3px;
+}
+
+.leftSide_header{
+    padding: 10px 18px;
+}
+.leftSide_header_title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.leftSide_header_search{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding: 6px 0px 6px 10px;
+    border: 1px solid #c9c9c9a6;
+    border-bottom: 2px solid #898989c4;
+    border-radius: 3px;
+}
+
+.leftSide_header_search input{
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    width: 100%;
+}
+
+.leftSide_header_search:has(input:focus){
+    border-bottom: 2px solid var(--Main_Color);
+}
+
+.contacts_container{
+    height: calc(100% - 70px);
+    padding-bottom: 50px;
+    overflow-y: scroll;
+}
+
+.contacts_container::-webkit-scrollbar {
+    width: 3px;
+}
+
+.contacts_container::-webkit-scrollbar-thumb {
+    background: #b7b7b7c4; 
+    border-radius: 10px;
+}
+
+.partient_contacts{
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 18px;
+}
+.partient_contacts:hover{
+    background-color: #4988fc52;
+    cursor: pointer;
+}
+.selected_partient_contacts{
+    background-color: #4988fc52;
+}
+
+.partient_contacts h6{
+    color: var(--MainDark_text);
+    font-weight: 700;
+    margin-top: 15px;
+}
+.partient_contacts p{
+    color: var(--SecondaryDark_text);
+    font-size: 12px;
+    margin-top: -5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200px; 
+}

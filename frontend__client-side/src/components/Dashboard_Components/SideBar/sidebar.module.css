@@ -1,0 +1,33 @@
+.sidebar{
+    background-color: unset;
+    height: 100vh;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.menu_bar{
+    background-color: unset;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+    font-size: 1rem;
+}
+
+.menu_bar_item{
+    color: var(--MainLight_text) !important;
+}
+
+.menu_bar_item2{
+    color: var(--SecondaryDark_text) !important;
+}
+
+.menu_bar_item2_logout{
+    color: var(--Dark_Red) !important;
+}

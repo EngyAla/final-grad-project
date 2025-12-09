@@ -1,0 +1,17 @@
+.status-content {
+    flex: 1;
+
+    .status-text {
+        font-size: 14px;
+        font-weight: 600;
+        margin: 0;
+        line-height: 1.2;
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 576px) {
+    .status-content .status-text {
+        font-size: 13px;
+    }
+}

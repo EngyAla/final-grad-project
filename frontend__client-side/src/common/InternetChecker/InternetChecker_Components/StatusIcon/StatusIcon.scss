@@ -1,0 +1,44 @@
+.status-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.05);
+    position: relative;
+
+    i {
+        font-size: 18px;
+    }
+
+    .wifi-slash {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(353deg);
+        z-index: 1;
+
+        i {
+            font-size: 20px;
+            font-weight: 900;
+        }
+    }
+}
+
+// Dark mode support
+.dark .status-icon {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+// Responsive adjustments
+@media (max-width: 576px) {
+    .status-icon {
+        width: 36px;
+        height: 36px;
+
+        i {
+            font-size: 16px;
+        }
+    }
+}

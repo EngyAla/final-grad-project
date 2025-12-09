@@ -1,0 +1,173 @@
+// =================== Stories Modal Styles ===================
+.story-modal-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999 !important;
+    padding: 1rem;
+    width: 100vw !important;
+    height: 100vh !important;
+    opacity: 0;
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes slideOutDown {
+    from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+}
+
+// Closing animations
+.story-modal-overlay.closing {
+    animation: fadeOut 0.3s ease-in forwards;
+}
+
+.story-modal-wrapper.closing {
+    animation: slideOutDown 0.3s ease-in forwards;
+}
+
+.story-modal-wrapper {
+    background: var(--white-color, #ffffff);
+    border-radius: 16px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 80vh;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    animation: slideInUp 0.3s ease-out forwards;
+}
+
+.story-modal {
+    background: var(--white-color, #ffffff);
+    border-radius: 16px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 1.5rem 0 1.5rem;
+        border-bottom: 1px solid var(--light-gray-bg, #f8f9fa);
+
+        h3 {
+            margin: 0;
+            color: var(--black-color, #000000);
+            font-weight: 600;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--black-light-color, #6c757d);
+            cursor: pointer;
+            padding: 0.25rem;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background: var(--light-gray-bg, #f8f9fa);
+                color: var(--black-color, #000000);
+            }
+        }
+    }
+
+    .modal-body {
+        padding: 1.5rem;
+
+        .modal-stars {
+            margin-bottom: 1rem;
+        }
+
+        .modal-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--black-color, #000000);
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-author {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--light-gray-bg, #f8f9fa);
+
+            h4 {
+                margin: 0;
+                color: var(--black-color, #000000);
+            }
+
+            span {
+                color: var(--black-light-color, #6c757d);
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
+
+// Responsive Modal
+@media (max-width: 768px) {
+    .story-modal-wrapper {
+        margin: 1rem;
+        max-height: 90vh;
+    }
+
+    .story-modal {
+        .modal-header {
+            padding: 1rem 1rem 0 1rem;
+        }
+
+        .modal-body {
+            padding: 1rem;
+        }
+    }
+}

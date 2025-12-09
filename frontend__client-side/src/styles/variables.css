@@ -1,0 +1,14 @@
+:root {
+    --Main_Color: #2653D0;
+    --MainDark_text: #1E1E1E;
+    --SecondaryDark_text: #404040;
+    --MainLight_text: #FFFFFF;
+    --SecondaryLight_text: #D2DDF1;
+    --Stars: #FCB52F;
+    --LightBlue_bg: #4988fcca;
+    --MidLightBlue_bg: #4b87f55a;
+    --Grey: #8B8B8B;
+    --Dark_Red: #F4181C;
+    --Light_RedError: #F94245;
+    --Dashboard_bg: #F2F2F2;
+}

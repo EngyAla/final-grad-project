@@ -1,0 +1,24 @@
+.internet-status {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 16px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-left: 4px solid;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+// Dark mode support
+.dark .internet-status {
+    background: #212529;
+    color: #ffffff;
+}
+
+// Responsive adjustments
+@media (max-width: 576px) {
+    .internet-status {
+        padding: 12px 16px;
+        gap: 10px;
+    }
+}
