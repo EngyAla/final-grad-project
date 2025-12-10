@@ -1,6 +1,6 @@
 // @ts-ignore
 import { NavLink } from 'react-router';
-import logo2 from '../../../assets/Logo2.png';
+import logo2 from '../../../assets/logo2.png';
 // @ts-ignore
 import styles from './sidebar.module.css';
 
