@@ -30,15 +30,25 @@ import styles2 from "../../Final_Patient_Dashboard/Doctors_Directory/doctorDirec
     // @ts-ignore
     const { appointments } = useContext(AppointmentsContext);
     const [value, setValue] = React.useState(0);
+    const [valueTxt, setValueTxt] = React.useState("");
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
 
     const filteredAppointments = React.useMemo(() => {
         if (value === 0) return appointments; // All
-        if (value === 1) return appointments.filter((a) => a.status === "pending");
-        if (value === 2) return appointments.filter((a) => a.status === "approved");
-        if (value === 3) return appointments.filter((a) => a.status === "canceled");
+        if (value === 1){
+            setValueTxt("Pending")
+            return appointments.filter((a) => a.status === "pending")
+        } ;
+        if (value === 2){
+            setValueTxt("Approved")
+            return appointments.filter((a) => a.status === "approved")
+        } ;
+        if (value === 3){
+            setValueTxt("Canceled")
+            return appointments.filter((a) => a.status === "canceled");
+        }
     }, [value, appointments]);
 
         const formatted = (e) =>{
@@ -54,62 +64,61 @@ import styles2 from "../../Final_Patient_Dashboard/Doctors_Directory/doctorDirec
     }
 
     return (
-        <Box sx={{ width: "100%" }}>
-            {filteredAppointments.length == 0 ?  
-                    (
-                    <div className={styles2.not_found_res}>
-                        <img src={not_found_img} alt="no result image" width={600} />
-                        <h1>No Appointments Yet</h1>
-                    </div>
-                    ) : 
-
+        <Box sx={{ width: "100%", padding: "20px 0px" }}>
             <>
             <Box sx={{ width: "100%" }}>
                 <Box sx={{ border: 1, borderColor: "divider" }}>
-                <Tabs
-                    value={value}
-                    onChange={handleChange}
-                    variant="fullWidth"
-                    aria-label="basic tabs example"
-                >
-                    <Tab
-                    label="All"
-                    sx={{
-                        borderRight: 1,
-                        borderColor: "divider",
-                        fontWeight: "700",
-                        fontSize: "16px",
-                    }}
-                    {...a11yProps(0)}
-                    />
-                    <Tab
-                    label="Pending"
-                    sx={{
-                        borderRight: 1,
-                        borderColor: "divider",
-                        fontWeight: "700",
-                        fontSize: "16px",
-                    }}
-                    {...a11yProps(1)}
-                    />
-                    <Tab
-                    label="Approaved"
-                    sx={{
-                        borderRight: 1,
-                        borderColor: "divider",
-                        fontWeight: "700",
-                        fontSize: "16px",
-                    }}
-                    {...a11yProps(2)}
-                    />
-                    <Tab
-                    label="Cancled"
-                    sx={{ fontWeight: "700", fontSize: "16px" }}
-                    {...a11yProps(3)}
-                    />
-                </Tabs>
+                    <Tabs
+                        value={value}
+                        onChange={handleChange}
+                        variant="fullWidth"
+                        aria-label="basic tabs example"
+                    >
+                        <Tab
+                        label="All"
+                        sx={{
+                            borderRight: 1,
+                            borderColor: "divider",
+                            fontWeight: "700",
+                            fontSize: "16px",
+                        }}
+                        {...a11yProps(0)}
+                        />
+                        <Tab
+                        label="Pending"
+                        sx={{
+                            borderRight: 1,
+                            borderColor: "divider",
+                            fontWeight: "700",
+                            fontSize: "16px",
+                        }}
+                        {...a11yProps(1)}
+                        />
+                        <Tab
+                        label="Approved"
+                        sx={{
+                            borderRight: 1,
+                            borderColor: "divider",
+                            fontWeight: "700",
+                            fontSize: "16px",
+                        }}
+                        {...a11yProps(2)}
+                        />
+                        <Tab
+                        label="Cancled"
+                        sx={{ fontWeight: "700", fontSize: "16px" }}
+                        {...a11yProps(3)}
+                        />
+                    </Tabs>
                 </Box>
             </Box>
+            {filteredAppointments.length == 0 ?  
+                (
+                <div className={styles2.not_found_res}>
+                    <img src={not_found_img} class="img-fluid mt-5" alt="no result image" width={600} />
+                    <h1>No {valueTxt} Appointments Yet</h1>
+                </div>
+                ) : 
             <Box className="doctor_card">
                 <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 4 }} mt={3}>
                 {filteredAppointments.map((app) => {
@@ -183,8 +192,8 @@ import styles2 from "../../Final_Patient_Dashboard/Doctors_Directory/doctorDirec
                     );
                 })}
                 </Grid>
-            </Box>
-            </>}
+            </Box>}
+            </>
         </Box>
     );
     };
