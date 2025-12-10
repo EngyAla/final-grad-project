@@ -11,8 +11,8 @@ const SpecialistCard = ({ specialist, onBookNow }: SpecialistCardProps) => {
                 />
                 <div className="specialist-overlay">
                     <div className="rating">
-                        <i className="fa-solid fa-star"></i>
-                        <span>{specialist.rating} rating</span>
+                        {/* <i className="fa-solid fa-star"></i> */}
+                        {/* <span>{specialist.rating} rating</span> */}
                     </div>
                     <h4 className="specialist-name">{specialist.name}</h4>
                     <p className="specialist-specialization">
