@@ -7,10 +7,10 @@ export const specialistFilters = [
     "All",
     ...Array.from(
         new Set(
-        specialtyOptions.map(option => option.value.toUpperCase())
+            specialtyOptions.map(option => String(option.value).toUpperCase())
         )
     )
-];
+] as string[];
 
 
 // It will be fetched from the backend

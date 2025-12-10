@@ -11,6 +11,7 @@ import StepThree from '../StepComponent/StepThree';
 // import StepFour from '../StepComponent/StepFour';
 import StepFive from '../StepComponent/StepFive';
 import { ProfileCtx } from '../../../context/ProfileCtx';
+import API_URL  from '../../../config/api'
 
 
 const MultiStepForm = ({ selectedDoctor, formData, setFormData, handleClose}) => {
@@ -76,7 +77,7 @@ const MultiStepForm = ({ selectedDoctor, formData, setFormData, handleClose}) =>
             }
             console.log(appointmentData)
 
-            const response = await fetch('http://localhost:5000/api/appointments/create', {
+            const response = await fetch(`${API_URL}/api/appointments/create`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -5,6 +5,7 @@ import DoctorRegister from "../../components/RegisterPage_Components/DoctorRegis
 import PatientRegister from "../../components/RegisterPage_Components/PatientRegister/PatientRegister";
 import "./RegisterPage.scss";
 import { ToastContainer, toast } from 'react-toastify';
+import API_URL from '../../config/api';
 
 const RegisterPage = () => {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -428,7 +429,7 @@ const RegisterPage = () => {
     ///////////
     const handleSubmitFinal = async () => {
         try {
-            const response = await fetch("http://localhost:5000/api/auth/register", {
+            const response = await fetch(`${API_URL}/api/auth/register`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

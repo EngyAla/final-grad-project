@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 import { AppointmentsContext } from './AppointmentsCtx';
 import { ProfileCtx } from '../ProfileCtx';
+import API_URL from '../../config/api';
+
 
 const AppointmentsCtxProvider = ({children}) =>{
     // @ts-ignore
@@ -14,7 +16,7 @@ const AppointmentsCtxProvider = ({children}) =>{
         if (!userInfo?._id) return;
         const fetchAppointment = async () =>{
             try{
-                const res = await fetch(`http://localhost:5000/api/appointments/patient/${userInfo._id}`);
+                const res = await fetch(`${API_URL}/api/appointments/patient/${userInfo._id}`);
                 const data = await res.json();
                 setAppointments(data.appointments);
 

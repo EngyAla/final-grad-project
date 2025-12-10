@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { DoctorsContext } from "./DoctorsCtx";
+import API_URL from '../../config/api';
 
 
 export const DoctorsProvider = ({ children }) => {
@@ -10,7 +11,7 @@ export const DoctorsProvider = ({ children }) => {
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/doctors/all");
+        const response = await fetch(`${API_URL}/api/doctors/all`);
         const data = await response.json();
 
         setAllDoctors(data);

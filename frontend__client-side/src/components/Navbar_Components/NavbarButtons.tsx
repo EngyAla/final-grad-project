@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import type { NavbarButtonsProps } from "../../common/Types/Interfaces";
 import NavbarDropdown from "./NavbarDropdown";
 import { NavLink } from "react-router-dom";

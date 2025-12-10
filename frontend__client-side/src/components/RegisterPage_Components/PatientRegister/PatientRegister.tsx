@@ -2,7 +2,7 @@
 import { useCallback } from "react";
 import PatientPersonalInfoForm from "../PersonalInfoForm/PatientPersonalInformation ";
 import PatientMedicalInfoForm from "../MedicalInfoForm/MedicalInfoForm";
-import SuccessForm from "../SuccessForm/SuccessForm";
+// import SuccessForm from "../SuccessForm/SuccessForm";
 
 interface PatientRegisterProps {
     formData: any;
@@ -44,7 +44,7 @@ const PatientRegister = ({
     // showResendMessage,
     // setShowResendMessage,
     // profileImage,
-    setProfileImage,
+    // setProfileImage,
     profileImagePreview,
     setProfileImagePreview,
     fileInputRef,

@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { DocAppointmentCtx } from './DocAppointmentCtx'
 import { ProfileCtx } from '../ProfileCtx';
+import API_URL from '../../config/api';
 
 
 const DocAppointmentsCtxProvider = (props) =>{
@@ -13,7 +14,7 @@ const DocAppointmentsCtxProvider = (props) =>{
         if (!userInfo?._id) return;
         const fetchAppointment = async () =>{
             try{
-                const res = await fetch(`http://localhost:5000/api/appointments/doctor/${userInfo._id}`);
+                const res = await fetch(`${API_URL}/api/appointments/doctor/${userInfo._id}`);
                 const data = await res.json();
                 setAppointments(data.appointments);
 

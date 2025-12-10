@@ -1,5 +1,6 @@
     import { useState, useEffect } from "react";
     import { ProfileCtx } from "./ProfileCtx";
+    import API_URL from '../config/api';
 
     const ProfileCtxProvider = ({ children }) => {
     const [isEditing, setIsEditing] = useState(false);
@@ -12,8 +13,8 @@
             const token = localStorage.getItem("token");
             const endpoint =
             userType === "doctor"
-                ? "http://localhost:5000/api/doctor/profile"
-                : "http://localhost:5000/api/patient/profile";
+                ? `${API_URL}/api/doctor/profile`
+                : `${API_URL}/api/patient/profile`;
 
             const res = await fetch(endpoint, {
             headers: {

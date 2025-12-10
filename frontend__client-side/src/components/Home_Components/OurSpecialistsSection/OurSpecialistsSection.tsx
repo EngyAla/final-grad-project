@@ -8,7 +8,6 @@ import {
     PaginationDots,
     NavigationButtons,
     specialistFilters,
-    specialistsData,
 } from "./OurSpecialistsSection_Components";
 import "./OurSpecialistsSection.scss";
 // import { NavLink } from "react-router-dom";

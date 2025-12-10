@@ -13,6 +13,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import not_found_img from "../../../assets/notFoundSVG.svg";
 import styles2 from "../../Final_Patient_Dashboard/Doctors_Directory/doctorDirectory.module.css";
+import API_URL from '../../../config/api';
 
 
 function a11yProps(index) {
@@ -49,7 +50,7 @@ const Appointments = () => {
 
     const handleStatusUpdate = async (appointmentId, newStatus) => {
         try {
-            const res = await fetch(`http://localhost:5000/api/appointments/${appointmentId}/status`, {
+            const res = await fetch(`${API_URL}/api/appointments/${appointmentId}/status`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
