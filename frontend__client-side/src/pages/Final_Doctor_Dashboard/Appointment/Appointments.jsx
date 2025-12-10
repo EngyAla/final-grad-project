@@ -107,10 +107,10 @@ const Appointments = () => {
                 (
                     <div className={styles2.not_found_res}>
                     <img src={not_found_img} class="img-fluid mt-5" alt="no result image" width={600} />
-                    <h1>No Appointments Yet</h1>
+                    <h1>No {valueTxt} Appointments Yet</h1>
                     </div>
                 ) : 
-            <table className="table border table-hover mt-4" >
+            <table className="table border table-hover mt-4">
                 <thead>
                     <tr>
                     <th scope="col">ID</th>
@@ -148,7 +148,7 @@ const Appointments = () => {
                                         }} variant="contained" color="error" sx={{fontSize: "14px", textTransform: "capitalize"}}>
                                             Cancel
                                         </Button>
-                                        <Button onClick={() => navigate(`/patient/${e.patient._id}`)} variant="contained" color="secondary" sx={{fontSize: "14px", textTransform: "capitalize"}}>
+                                        <Button onClick={() => navigate(`/doctor/patient/${e.patient._id}`)} variant="contained" color="secondary" sx={{fontSize: "14px", textTransform: "capitalize"}}>
                                             View Profile
                                         </Button>
                                     </Box>
