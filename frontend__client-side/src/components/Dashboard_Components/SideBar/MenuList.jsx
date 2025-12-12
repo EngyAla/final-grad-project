@@ -1,5 +1,4 @@
 import { Menu } from 'antd';
-
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import SavedSearchIcon from '@mui/icons-material/SavedSearch';
@@ -7,15 +6,18 @@ import EventAvailableIcon from '@mui/icons-material/EventAvailable';
 // import ChatIcon from '@mui/icons-material/Chat';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import LogoutIcon from '@mui/icons-material/Logout';
-
+import { useAuth } from '../../../context/AuthContext'
 // @ts-ignore
 import styles from './sidebar.module.css';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 
+
+
 const MenuList = ({ userType }) => {
-    console.log(userType)
+    // console.log(userType)
     const [selected, setSelected] = useState('home');
+    const { logout } = useAuth();
 
     const saveSelectedState = (state) => {
         localStorage.setItem('selectState', state);
@@ -60,7 +62,7 @@ const MenuList = ({ userType }) => {
         {
         key: 'logout',
         icon: <LogoutIcon style={{ fontSize: '22px' }} />,
-        label: <Link to="/">Logout</Link>,
+        label: <Link to="/" onClick={logout}>Logout</Link>,
         className: selected === 'logout' ? styles.menu_bar_item : styles.menu_bar_item2_logout,
         },
     ];
@@ -92,7 +94,7 @@ const MenuList = ({ userType }) => {
         {
         key: 'logout',
         icon: <LogoutIcon style={{ fontSize: '22px' }} />,
-        label: <Link to="/">Logout</Link>,
+        label: <Link to="/login" onClick={logout}>Logout</Link>,
         className: selected === 'logout' ? styles.menu_bar_item : styles.menu_bar_item2_logout,
         },
     ];

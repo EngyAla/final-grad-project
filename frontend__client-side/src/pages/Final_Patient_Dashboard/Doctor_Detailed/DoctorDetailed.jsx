@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 // import { doctorsData } from "../Doctors_Directory/filterdata";
 import { Box, Card, Grid } from '@mui/material';
@@ -24,16 +24,33 @@ const DoctorDetailed = () => {
         return d._id == doctorId;
     });
 
-    // const [value, setValue] = useState(0);
-    // useEffect(() =>{
-    //     setInterval(() =>{
-    //         setValue(prev => prev +1)
-    //     }, 50)
-    // }, [])
+    const [value, setValue] = useState(0);
+    useEffect(() =>{
+        setInterval(() =>{
+            setValue(prev => prev +1)
+        }, 50)
+    }, [])
 
-    // function hideName(name){
-    //     return name.split(" ").map(word => word[0] + "*".repeat(word.length -1)).join(" ")
-    // }
+    function hideName(name){
+        return name.split(" ").map(word => word[0] + "*".repeat(word.length -1)).join(" ")
+    }
+
+    const getEmbedUrl = (url) => {
+        if (!url) return "";
+
+        // حاول استخراج الإحداثيات من أي رابط Maps
+        const latLngRegex = /@(-?\d+\.\d+),(-?\d+\.\d+)/;
+        const match = url.match(latLngRegex);
+
+        if (match) {
+            const lat = match[1];
+            const lng = match[2];
+            return `https://www.google.com/maps?q=${lat},${lng}&z=15&output=embed`;
+        }
+
+        // fallback: استخدمي البحث العام
+        return `https://www.google.com/maps?q=${encodeURIComponent(url)}&output=embed`;
+    };
 
 
     return (
@@ -101,7 +118,7 @@ const DoctorDetailed = () => {
                     </Grid>
                     <Grid className={styles.doctor_detailes_location_map} size={{sm: 12, md: 6, lg: 8}}>
                         <iframe
-                            src={doctor?.addressOnMap}
+                            src={getEmbedUrl(doctor?.addressOnMap)}
                             width="100%"
                             height="350"
                             style={{ borderRadius: "5px"}}
@@ -114,11 +131,11 @@ const DoctorDetailed = () => {
 
             {/* /////////////////////////////////////// */}
 
-            {/* <Box sx={{mt: 15}}>
+            <Box sx={{mt: 15}}>
                 <h4>Patient Reviews</h4>
                 <Card className={styles.patient_reviews_card} sx={{mt: 5}}>
                     <Box className={styles.rating}>
-                        <h1>{doctor.rating}</h1>
+                        <h1>4.5</h1>
                         <Box>
                             <StarIcon style={{fontSize: "40px", color: "#FCB52F"}}/>
                             <StarIcon style={{fontSize: "40px", color: "#FCB52F"}}/>
@@ -131,48 +148,42 @@ const DoctorDetailed = () => {
                         <Grid size={{sm: 12, md: 4, lg: 4}}>
                             <Box className={styles.rating_presentage}>
                                 <h6>Punctuality</h6>
-                                <h6>{doctor.punctuality}</h6>
+                                <h6>4.7</h6>
                             </Box>
-                            <ProgressBar value={value} endValue={(doctor.punctuality / 5) *100} />    
+                            <ProgressBar value={value} endValue={(4.7 / 5) *100} />    
                         </Grid>
                         <Grid size={{sm: 12, md: 6, lg: 4}}>
                             <Box className={styles.rating_presentage}>
                                 <h6>Cleanliness</h6>
-                                <h6>{doctor.cleanliness}</h6>
+                                <h6>4</h6>
                             </Box>
-                            <ProgressBar value={value} endValue={(doctor.cleanliness / 5) *100} />    
+                            <ProgressBar value={value} endValue={(4 / 5) *100} />    
                         </Grid>
                         <Grid size={{sm: 12, md: 6, lg: 4}}>
                             <Box className={styles.rating_presentage}>
                                 <h6>Cordiality</h6>
-                                <h6>{doctor.cordiality}</h6>
+                                <h6>4.5</h6>
                             </Box>
-                            <ProgressBar value={value} endValue={(doctor.cordiality / 5) *100} />   
+                            <ProgressBar value={value} endValue={(4.5 / 5) *100} />   
                         </Grid>
                     </Grid>
                 </Card>
                 <Box className={styles.patient_reviews}>
-                    {
-                        doctor.reviews.map((r) =>{
-                            return(
                                 <Box>
                                     <Box sx={{display: "flex", alignItems: "center", mt: 5, mb: 2}}>
-                                        <h5>{r.rating}</h5>
+                                        <h5>4.5</h5>
                                         <StarIcon style={{fontSize: "28px", color: "#FCB52F"}}/>
                                         <StarIcon style={{fontSize: "28px", color: "#FCB52F"}}/>
                                         <StarIcon style={{fontSize: "28px", color: "#FCB52F"}}/>
                                         <StarIcon style={{fontSize: "28px", color: "#FCB52F"}}/>
                                         <StarIcon style={{fontSize: "28px", color: "#FCB52F"}}/>
                                     </Box>
-                                    <h6>{hideName(r.user)}</h6>
-                                    <h6>{r.review}</h6>
-                                    <p>{r.date}</p>
+                                    <h6>{hideName("Mona Khaled")}</h6>
+                                    <h6>Very professional and explains everything clearly.</h6>
+                                    <p>2025-02-10</p>
                                 </Box>
-                            )
-                        })
-                    }
                 </Box>
-            </Box> */}
+            </Box>
         </Box>
     )
 }

@@ -297,6 +297,28 @@ const PersonalInfoForm = ({
                                     </div>
 
                                     <div className="row">
+                                        <div className="col-md-12 mb-3">
+                                            <div className="mb-3">
+                                                <label className="fw-semibold form-label">
+                                                    Map Address
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    className="form-control py-2"
+                                                    placeholder="Map Address"
+                                                    value={formData.addressOnMap}
+                                                    onChange={(e) =>
+                                                        updateField(
+                                                            "addressOnMap",
+                                                            e.target.value
+                                                        )
+                                                    }
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="row">
                                         <div className="col-12 mb-3">
                                             <div className="mb-3">
                                                 <label className="fw-semibold form-label">

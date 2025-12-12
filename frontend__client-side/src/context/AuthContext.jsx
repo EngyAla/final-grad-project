@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }) => {
         localStorage.removeItem("userType");
         localStorage.removeItem("userId");
         localStorage.removeItem("userStoredData");
-
+        localStorage.removeItem("selectState");
         // navigate('/', { replace: true }); 
     }, []);
 

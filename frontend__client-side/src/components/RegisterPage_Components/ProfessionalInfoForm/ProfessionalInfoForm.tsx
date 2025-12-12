@@ -62,6 +62,7 @@ const handleSubmitFinal = async () => {
         gender: formData.gender,
         phoneNumber: formData.phoneNumber,
         address: formData.address,
+        addressOnMap: formData.addressOnMap,
         country: formData.country,
         nationalId: formData.nationalId,
         specialization: formData.specialization,
@@ -75,7 +76,8 @@ const handleSubmitFinal = async () => {
         availableTiming: timings,
         profileImage: formData.profileImage,
     };
-    // console.log(doctorData)
+    
+    console.log(doctorData)
 
     const response = await fetch(`${API_URL}/api/auth/register`, {
         method: "POST",

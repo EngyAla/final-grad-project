@@ -324,7 +324,7 @@ const PatientDetail = () => {
                                         <h4>{patient?.firstName} {patient?.lastName}</h4>
                                         <p>Patient ID: {patient?._id}</p>
                                     </Box>
-                                    <Grid mt={8} container rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+                                    <Grid mt={5} container rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                                         <Grid size={4} sx={{display: "flex", gap: "8px"}}>
                                             <MailOutlineIcon sx={{color: "#2653D0"}}/>
                                             <p>Email: {patient?.email}</p>
@@ -356,9 +356,9 @@ const PatientDetail = () => {
                 <Card sx={{mt: 3, p: 2}}>
                     <h4 style={{marginBottom: "40px"}}>Medical Overview</h4>
                     <h6>Chronic Diseases:</h6>
-                    <Alert severity="" sx={{mb:5, backgroundColor: "#ffb6b681", borderLeft: "3px solid #ed1e1eff"}}>{patient?.chronicDisease}</Alert>
+                    <Alert severity="" sx={{mb:5, backgroundColor: "#e1e1e181", borderLeft: "3px solid #4b4b4bff"}}>{patient?.chronicDisease}</Alert>
                     <h6>Medical History Summary:</h6>
-                    <Alert severity="" sx={{mb:5, backgroundColor: "#ffb6b681", borderLeft: "3px solid #ed1e1eff"}}>{patient?.medicalHistory}</Alert>
+                    <Alert severity="" sx={{mb:5, backgroundColor: "#e1e1e181", borderLeft: "3px solid #4b4b4bff"}}>{patient?.medicalHistory}</Alert>
                     <hr />
                     <h6>Emergency Contact Details</h6>
                     <Grid container rowSpacing={1} mt={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>

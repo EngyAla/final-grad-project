@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router";
 import type { SpecialistCardProps } from "../../../../common/Types/Interfaces";
 
 const SpecialistCard = ({ specialist, onBookNow }: SpecialistCardProps) => {
+    const navigate = useNavigate();
     return (
         <div className="specialist-card">
             <div className="specialist-image-container">
@@ -23,7 +25,10 @@ const SpecialistCard = ({ specialist, onBookNow }: SpecialistCardProps) => {
 
             <button
                 className="book-now-btn blue-btn position-absolute"
-                onClick={() => onBookNow?.(specialist)}
+                onClick={() => {
+                    onBookNow?.(specialist)
+                    navigate('/register')
+                }}
             >
                 Book Now
             </button>

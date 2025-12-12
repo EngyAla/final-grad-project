@@ -23,18 +23,6 @@ const doctorSchema = new mongoose.Schema({
     feePerConsultation: { type: Number, required: true },
     currency: { type: String, required: true },
     visitDuration: { type: String, required: true },
-
-    // availableDays: {
-    //     sunday: { type: Boolean, default: false },
-    //     monday: { type: Boolean, default: false },
-    //     tuesday: { type: Boolean, default: false },
-    //     wednesday: { type: Boolean, default: false },
-    //     thursday: { type: Boolean, default: false },
-    //     friday: { type: Boolean, default: false },
-    //     saturday: { type: Boolean, default: false },
-    // },
-
-    // availableTiming: { type: String, required: true },
     availableTiming: [
     {
         day: { type: String, required: true },

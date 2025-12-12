@@ -295,10 +295,10 @@ const PatientProfile = () => {
             {
                 isEditing ?
                 (
-                    <Button variant="contained" onClick={handelSave}>Save Changes</Button>
+                    <Button variant="contained" href='#' onClick={handelSave}>Save Changes</Button>
                 ) :
                 (
-                    <Button variant="contained" onClick={() => setIsEditing(true)}>Edit</Button>
+                    <Button variant="contained" href='#' onClick={() => setIsEditing(true)}>Edit</Button>
                 )
             }
             </div>
